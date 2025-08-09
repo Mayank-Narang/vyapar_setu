@@ -1,13 +1,16 @@
 import { useEffect } from "react";
-
+import {NavBar} from "./components/NavBar"
 function App() {
   useEffect(() => {
-    fetch("/api/hello")
+    console.log("fetching")
+    fetch("/api/discover")
       .then(res => res.json())
       .then(data => console.log(data));
   }, []);
 
-  return <h1>Check the console for backend response</h1>;
+  return <>
+    <NavBar />
+    </>;
 }
 
 export default App;
