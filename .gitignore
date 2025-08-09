@@ -1,0 +1,46 @@
+# Node dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-lock.yaml
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+*.log.*
+debug.log
+error.log
+
+# Temporary files
+tmp/
+temp/
+.cache/
+
+# Build output (if any)
+dist/
+build/
+
+# System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# VSCode settings
+.vscode/
+*.code-workspace
+
+# OS backup / misc
+*.bak
+*.swp
+*.swo
