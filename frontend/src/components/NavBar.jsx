@@ -54,7 +54,7 @@ export function NavBar() {
         >
           <Minus size={14} />
         </button>
-        <span className="w-10 text-center">{fontSize}px</span>
+        <div className="text-2xl mx-2">{fontSize}px</div>
         <button
           onClick={() => changeFontSize(1)}
           className="border border-orange-400 text-orange-400 p-2 rounded hover:bg-orange-100"
