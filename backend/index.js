@@ -3,7 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 require('dotenv').config();
 const app = express();
-const {Item} = require('./db/db.js')
+const {Listing} = require('./db/db.js')
 mongoose    
   .connect(process.env.DB_connection)
   .then(() => console.log("MongoDB connected"))
@@ -12,14 +12,13 @@ mongoose
 app.use(cors());
 app.use(express.json());
 
-
-
 app.get("/api/discover", async (req, res) => {
   try {
-    const items = await Item.find();
-    res.json(items);
+    const listings = await Listing.find().sort({ createdAt: -1 });
+    res.json(listings);
   } catch (error) {
-    res.status(500).json({ error: "Error fetching data" });
+    console.error("Error fetching listings:", error);
+    res.status(500).json({ error: "Error fetching listings" });
   }
 });
 
