@@ -21,9 +21,10 @@ export function NavBar() {
   };
 
   return (
-    <nav className="flex items-center justify-between px-6 py-3 bg-white shadow" style={{ fontSize: `${fontSize}px` }}>
+    <nav className="flex items-center justify-around px-6 py-5 bg-white shadow" style={{ fontSize: `${fontSize}px` }}>
       {/* Logo */}
-      <div className="text-3xl font-bold text-orange-400">Vyapar Setu</div>
+      <div className="flex items-center justify-center gap-10">
+      <div className="text-4xl font-bold text-orange-400">Vyapar Setu</div>
 
       {/* Menu */}
       <ul className="flex items-center gap-6">
@@ -31,7 +32,7 @@ export function NavBar() {
           <li key={p.api}>
             <button
               onClick={() => handleClick(p.api)}
-              className={`flex text-xl items-center gap-1 px-3 py-1 rounded transition-colors cursor-pointer ${
+              className={`flex text-2xl items-center gap-1 px-4 py-2 rounded-xl transition-colors cursor-pointer ${
                 currentPage === p.api 
                   ? 'bg-orange-400 text-white' 
                   : 'text-gray-700 hover:text-orange-500'
@@ -43,7 +44,7 @@ export function NavBar() {
           </li>
         ))}
       </ul>
-
+        </div>
       {/* Font size controls */}
       <div className="flex items-center gap-2 text-gray-700">
         <span className="text-xl">Font Size:</span>
