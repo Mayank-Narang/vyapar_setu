@@ -11,6 +11,14 @@ export function DiscoverPage() {
   const [selectedCategory, setSelectedCategory] = useState('All Categories');
   const [selectedLocation, setSelectedLocation] = useState('All Locations');
   const [selectedStatus, setSelectedStatus] = useState('All Status');
+  
+  const clearFilters = () => {
+        setSearchTerm('');
+        setSelectedCategory('All Categories');
+        setSelectedLocation('All Locations');
+        setSelectedStatus('All Status');
+    };
+
 
   useEffect(() => {
     fetch('/api/discover')
@@ -130,10 +138,19 @@ export function DiscoverPage() {
           </div>
         </div>
 
-        <div className="mt-4 text-sm text-gray-600">
-          Showing {filteredListings.length} of {listings.length} listings
+        <div className="mt-4 flex items-center justify-between">
+            <div className="text-sm text-gray-600">
+                Showing {filteredListings.length} of {listings.length} listings
+            </div>
+            <button
+                onClick={clearFilters}
+                className="text-sm text-orange-500 hover:underline"
+            >
+                Clear Filters
+            </button>
         </div>
-      </div>
+    </div>
+
 
       {/* Listings Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
