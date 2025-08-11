@@ -5,18 +5,18 @@ export function DashboardHeader() {
   const { fontSize } = useApp();
 
   return (
-    <div className="flex gap-6 items-center">
+    <div className="flex gap-6 items-center w-full px-95 mb-10">
       {/* Avatar */}
       <div
         className="w-20 h-20 bg-orange-400 text-white flex items-center justify-center font-bold rounded-full"
-        style={{ fontSize: fontSize * 0.8 }}
+        style={{ fontSize: fontSize*1.5}}
       >
         M
       </div>
 
       {/* Text area */}
       <div className="flex flex-col gap-2" style={{ fontSize }}>
-        <div className="font-bold tracking-wide" style={{ fontSize: fontSize * 1.5 }}>
+        <div className="font-bold tracking-wide" style={{ fontSize: fontSize * 2.25 }}>
           Welcome back, Mayank
         </div>
 
