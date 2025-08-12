@@ -7,13 +7,13 @@ export default function Overview() {
   const [userListings, setUserListings] = useState([]);
   const [globalListings, setGlobalListings] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const userId = "64f1c1a9e13f2a0012345678";
   useEffect(() => {
     async function fetchData() {
       try {
         const [userRes, globalRes] = await Promise.all([
-          fetch(`http://localhost:5000/api/user-listings/${user.id}`),
-          fetch(`http://localhost:5000/api/listings`)
+          fetch(`api/user-listings/${userId}`),
+          fetch(`api/listings`)
         ]);
 
         if (!userRes.ok || !globalRes.ok) {

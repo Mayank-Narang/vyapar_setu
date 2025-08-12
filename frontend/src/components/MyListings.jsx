@@ -5,7 +5,7 @@ import { FaEdit, FaComments } from "react-icons/fa";
 export default function MyListings() {
   const { fontSize } = useApp();
   const [listings, setListings] = useState([]);
-  const userId = "66a7b8f3c0d456789abc1234"; // Replace with logged-in user's ID
+  const userId = "66a7b8f3c0d456789abc1234";
 
   const statusColors = {
     Available: "bg-green-100 text-green-700",
@@ -14,7 +14,7 @@ export default function MyListings() {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/my-listings/${userId}`)
+    fetch(`api/my-listings/${userId}`)
       .then((res) => res.json())
       .then((data) => setListings(data))
       .catch((err) => console.error("Error fetching listings:", err));

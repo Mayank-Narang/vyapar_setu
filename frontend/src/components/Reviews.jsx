@@ -8,11 +8,11 @@ export default function Reviews() {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [avgRating, setAvgRating] = useState(0);
-
+const userId = "64f1c1a9e13f2a0012345678";
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/reviews");
+        const res = await fetch("/api/reviews/:userId");
         if (!res.ok) throw new Error("Failed to fetch reviews");
 
         const data = await res.json();

@@ -7,12 +7,12 @@ export default function Profile() {
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const userId = "66a7b8f3c0d456789abc1234"; // Replace with logged-in user ID
+  const userId = "64f1c1a9e13f2a0012345678";
 
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/profile/${userId}`);
+        const res = await fetch(`/api/profile/${userId}`);
         if (!res.ok) throw new Error("Failed to fetch profile");
 
         const data = await res.json();
