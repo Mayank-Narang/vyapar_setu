@@ -384,7 +384,7 @@ export function RegisterPage() {
               Registration Successful!
             </h3>
             <p className="text-sm text-gray-500 mb-4">
-              Your MSME registration has been submitted successfully.
+              Your MSME registration has been submitted successfully. We will get back to you soon.
             </p>
             <button
               onClick={() => setShowModal(false)}
