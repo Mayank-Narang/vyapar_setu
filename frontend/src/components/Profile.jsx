@@ -40,7 +40,6 @@ export default function CompanyProfile() {
       try {
         const res = await fetch(`/api/profile/${userId}`);
         if (!res.ok) throw new Error("Failed to fetch profile");
-        console.log(res)
         const data = await res.json();
         setProfile(data);
         setFormData(data);

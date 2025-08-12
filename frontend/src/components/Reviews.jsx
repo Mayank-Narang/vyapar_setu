@@ -12,7 +12,7 @@ export default function Reviews() {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const res = await fetch("/api/reviews/:userId");
+        const res = await fetch(`/api/reviews/${userId}`);
         if (!res.ok) throw new Error("Failed to fetch reviews");
 
         const data = await res.json();
@@ -53,14 +53,14 @@ export default function Reviews() {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
         <h2 className="text-3xl font-bold text-gray-800">Customer Reviews</h2>
         <div className="flex items-center text-gray-600">
-          <div className="flex items-center text-yellow-500 mr-3">
+          <div className="flex items-center text-orange-500 mr-3">
             {Array(5)
               .fill()
               .map((_, i) => (
                 <FaStar
                   key={i}
                   size={22}
-                  className={i < Math.round(avgRating) ? "text-yellow-500" : "text-gray-300"}
+                  className={i < Math.round(avgRating) ? "text-orange-500" : "text-gray-300"}
                 />
               ))}
           </div>
@@ -85,7 +85,7 @@ export default function Reviews() {
                     <FaStar
                       key={i}
                       size={20}
-                      className={i < review.rating ? "text-yellow-500" : "text-gray-300"}
+                      className={i < review.rating ? "text-orange-500" : "text-gray-300"}
                     />
                   ))}
               </div>
