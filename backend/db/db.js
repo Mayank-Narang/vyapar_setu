@@ -61,8 +61,25 @@ const UserSchema = new mongoose.Schema(
     phone: {
       type: String
     },
-    avatar: {
-      type: String
+    address: {
+        type: String,
+        default: ""
+    },
+    description: {
+        type: String,
+        default: ""
+    },
+    industry: {
+        type: String,
+        default: ""
+    },
+    gstNumber: {
+        type: String,
+        default: ""
+    },
+    panNumber: {
+        type: String,
+        default: ""
     }
   },
   { timestamps: true }
@@ -80,8 +97,9 @@ const ReviewSchema = new mongoose.Schema(
       type: String,
       required: true
     },
-    company: {
-      type: String,
+    directedUser: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref:"User",
       required: true
     },
     reviewer: {
