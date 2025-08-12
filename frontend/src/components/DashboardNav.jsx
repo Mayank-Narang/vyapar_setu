@@ -21,7 +21,7 @@ export function DashboardNav() {
       case "Reviews":
         return <Reviews />;
       default:
-        return <Overview />;
+        return <MyListings />;
     }
   };
 
