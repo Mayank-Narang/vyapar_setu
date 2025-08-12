@@ -126,6 +126,14 @@ app.get("/api/reviews/:userId", async (req, res) => {
   }
 });
 
+app.get("/api/register", async (req, res) => {
+  try {
+    const listings = await Listing.find().populate("owner", "name email");
+    res.json(listings);
+  } catch (error) {
+    res.status(500).json({ error: "Error fetching listings" });
+  }
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Backend running on http://localhost:${PORT}`));
